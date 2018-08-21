@@ -56,5 +56,22 @@ var createBoard = function() {
   };
 };
 
+var resetBoard = function () {
+  for (var i = 0; i < cards.length; i ++) {
+    var cardElement = document.getElementsByTagName('img')[i];
+    cardElement.setAttribute('src', 'images/back.png');
+    cardsInPlay = [];
+    checkForMatch();
+  };
+};
+
+var resetClick = function() {
+  var resetButton = document.getElementById('reset-button');
+  resetButton.addEventListener('click', resetBoard);
+  //resetButton.addEventListener('click', createBoard);
+
+};
+
 // Scripts
 createBoard();
+resetClick();
