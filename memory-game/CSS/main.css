@@ -105,3 +105,17 @@ footer {
   height: 0;
   font-size: 0;
 }
+
+.score {
+  background: white;
+  color: black;
+  text-align: right;
+  margin-right: 55px;
+  margin-bottom: 10px;
+  font-family: "Raleway", sans-serif;
+
+}
+
+img {
+  margin-top: 0;
+}

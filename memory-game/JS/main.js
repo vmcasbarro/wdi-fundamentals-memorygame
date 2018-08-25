@@ -28,10 +28,15 @@ var cards = [
   },
 ];
 
+// Variables
+var score = 0;
+
 // Functions
 var checkForMatch = function() {
   if (cardsInPlay.length === 2) {
     if (cardsInPlay[0] === cardsInPlay[1]) {
+      score++;
+      scoreAdd();
       alert("You found a match!");
     } else {
       alert("Sorry, try again");
@@ -68,10 +73,14 @@ var resetBoard = function () {
 var resetClick = function() {
   var resetButton = document.getElementById('reset-button');
   resetButton.addEventListener('click', resetBoard);
-  //resetButton.addEventListener('click', createBoard);
+};
 
+var scoreAdd = function() {
+  var scoreElement = document.getElementById('score');
+  scoreElement.innerHTML = score;
 };
 
 // Scripts
 createBoard();
 resetClick();
+scoreAdd();
