@@ -1,10 +1,11 @@
 body {
   text-align: center;
   margin: 0;
+  background: #FCEED7;
 }
 
 header {
-  background-color: #F15B31;
+  background-color: #245E46;
   color: #fff;
   padding: 30px 20px;
 
@@ -12,7 +13,7 @@ header {
 
 nav {
   font-family: "Raleway", sans-serif;
-  background-color: #00A6B3;
+  background-color: #A37F4A;
   color: #fff;
   padding: 20px 0px;
   letter-spacing: 1px;
@@ -38,7 +39,6 @@ img {
 
 h1 {
   font-family: "Raleway", sans-serif;
-  /* color: #0d2c40; */
   letter-spacing: 1px;
   font-weight: 400;
   font-size: 45px;
@@ -61,8 +61,7 @@ p {
 
 a {
   text-decoration: none;
-  color: #fff;
-  color: #f15b31;
+  color: #5E884D;
   border-bottom: 2px solid transparent;
 }
 
@@ -75,7 +74,7 @@ footer {
   padding: 0 20px;
   margin: 0;
   border-style: none;
-  background: #0D2C40;
+  background: #245E46;
   color: white;
   font-size: 14px;
   letter-spacing: .08em;
@@ -93,7 +92,7 @@ footer {
 }
 
 .name {
-  color: #F15B31;
+  color: #F8DF22;
   font-weight: 700;
 }
 
@@ -107,15 +106,19 @@ footer {
 }
 
 .score {
-  background: white;
   color: black;
   text-align: right;
-  margin-right: 55px;
+  margin-right: 155px;
   margin-bottom: 10px;
   font-family: "Raleway", sans-serif;
 
 }
 
 img {
-  margin-top: 0;
+  margin: 20px 20px;
+}
+
+#game-board {
+  display: inline-block;
+  text-align: center;
 }

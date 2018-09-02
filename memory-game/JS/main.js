@@ -1,30 +1,25 @@
 console.log("Up and running!");
 
 // Arrays
-//var cards = ["queen", "king", "queen", "king"];
-var cardsInPlay = [];
+var mountainsInPlay = [];
 
 // Objects
-var cards = [
+var mountains = [
   {
-    rank: "queen",
-    suit: "hearts",
-    cardImage: "images/queen-of-hearts.png"
+    peak: "washington",
+    mountainImage: "images/washington.png"
   },
   {
-    rank: "queen",
-    suit: "diamonds",
-    cardImage: "images/queen-of-diamonds.png"
+    peak: "franconia",
+    mountainImage: "images/franconia.png"
   },
   {
-    rank: "king",
-    suit: "hearts",
-    cardImage: "images/king-of-hearts.png"
+    peak: "washington",
+    mountainImage: "images/washington.png"
   },
   {
-    rank: "king",
-    suit: "diamonds",
-    cardImage: "images/king-of-diamonds.png"
+    peak: "franconia",
+    mountainImage: "images/franconia.png"
   },
 ];
 
@@ -33,8 +28,8 @@ var score = 0;
 
 // Functions
 var checkForMatch = function() {
-  if (cardsInPlay.length === 2) {
-    if (cardsInPlay[0] === cardsInPlay[1]) {
+  if (mountainsInPlay.length === 2) {
+    if (mountainsInPlay[0] === mountainsInPlay[1]) {
       score++;
       scoreAdd();
       alert("You found a match!");
@@ -44,28 +39,30 @@ var checkForMatch = function() {
   };
 };
 var flipCard = function () {
-  var cardID = this.getAttribute('data-id');
-  console.log("User flipped " + cards[cardID].rank);
-  console.log(cards[cardID].suit + '\n' + cards[cardID].cardImage);
-  cardsInPlay.push(cards[cardID].rank);
-  this.setAttribute('src', cards[cardID].cardImage);
+  var mountainID = this.getAttribute('data-id');
+  console.log("User flipped " + mountains[mountainID].peak);
+  console.log(mountains[mountainID].mountainImage);
+  mountainsInPlay.push(mountains[mountainID].peak);
+  this.setAttribute('src', mountains[mountainID].mountainImage);
   checkForMatch();
 };
+
 var createBoard = function() {
-  for (var i = 0; i < cards.length; i ++) {
-    var cardElement = document.createElement('img');
-    cardElement.setAttribute('src', 'images/back.png');
-    cardElement.setAttribute('data-id', i);
-    cardElement.addEventListener('click', flipCard);
-    document.getElementById('game-board').appendChild(cardElement);
+  for (var i = 0; i < mountains.length; i ++) {
+    var mountainElement = document.createElement('img');
+    mountainElement.setAttribute('src', 'images/mountain_back.png');
+    mountainElement.setAttribute('data-id', i);
+    mountainElement.setAttribute('title', mountains[i].peak);
+    mountainElement.addEventListener('click', flipCard);
+    document.getElementById('game-board').appendChild(mountainElement);
   };
 };
 
 var resetBoard = function () {
-  for (var i = 0; i < cards.length; i ++) {
-    var cardElement = document.getElementsByTagName('img')[i];
-    cardElement.setAttribute('src', 'images/back.png');
-    cardsInPlay = [];
+  for (var i = 0; i < mountains.length; i ++) {
+    var mountainElement = document.getElementsByTagName('img')[i];
+    mountainElement.setAttribute('src', 'images/mountain_back.png');
+    mountainsInPlay = [];
     checkForMatch();
   };
 };
